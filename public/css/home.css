@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background-color: #4c4b4b;
+  
+}
+.navbar{
+    padding: 0 6rem;
+    line-height: 10em;
+}
+.nav-item a{
+    color:#fff;
+    font-size: 1.2em;
+}
+.navbar ul{
+    margin-left: auto;
+    
+}
+.navbar button{
+    line-height: 1.3em;
+    padding: .7rem 2rem;
+    font-size: 1.2em;
+}
+nav ul li a{
+    color:#fff !important
+}
+.logo{
+    width: 100%;
+ 
+}
+.navbar-brand{
+    font-size: 2em;
+    font-size: 1.3em;
+    color:#fff
+}
+.navitems{
+    gap: 2em;
+}
+.navlinks{
+    gap: 2em;
+}
+.fa-facebook{
+    margin-right: 1em;
+}
+.fa-brands{
+    color:#fff
+}
+.title-column{
+    padding: 0 7.5rem;  
+}
+.title-column h1{
+    font-size: 4.5em;
+    white-space: nowrap;
+    color:#fff
+
+}
+.title-row{
+    background-color:  #343333;
+    padding: 10rem 0 4rem;
+}
+.image-wrapper img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-wrapper{
+    height: 100%;
+    width: 100%;
+}
+.image{
+    height:70vh;
+}
