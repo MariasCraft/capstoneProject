@@ -17,16 +17,16 @@ dotenv.config()     //to use the process dotenv variable
 const app = express()
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-//mongoes are open database connection
-mongoose.connect(process.env.database)
-mongoose.connection.on("error", console.error.bind(console, "Connection Error"))
-mongoose.connection.once("open", () => {
-    console.log("connected")
-})
-const store = new MongoStore({
-    mongoUrl: process.env.database,
-    touchAfter: 24 * 60 * 60
-})
+// //mongoes are open database connection
+// mongoose.connect(process.env.database)
+// mongoose.connection.on("error", console.error.bind(console, "Connection Error"))
+// mongoose.connection.once("open", () => {
+//     console.log("connected")
+// })
+// const store = new MongoStore({
+//     mongoUrl: process.env.database,
+//     touchAfter: 24 * 60 * 60
+// })
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
@@ -57,6 +57,6 @@ app.set("views", path.join(__dirname, "views"))
 app.static
 
 
-app.listen(process.env.port, () => {
+app.listen(process.env.port || 3000, () => {
     console.log("we are online")
 })

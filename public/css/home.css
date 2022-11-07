@@ -69,7 +69,27 @@ nav ul li a{
 .image-wrapper{
     height: 100%;
     width: 100%;
+    padding: 0;
 }
 .image{
     height:70vh;
+}
+.social-icons{
+    display: flex;
+}
+.image-with-text{
+    justify-content: center;
+}
+.image-with-text .col-lg-4{
+    padding: 0;
+}
+.image-with-text .col-lg-4 img{
+    object-fit: cover;
+    width: 100%;
+}
+.image-with-text .col-lg-5 p{
+    font-size: 1.4em;
+}
+.image-with-text .col-lg-5 h2{
+    font-size: 4em;
 }
