@@ -48,18 +48,15 @@ nav ul li a{
 .fa-brands{
     color:#fff
 }
-.title-column{
-    padding: 0 7.5rem;  
-}
+
 .title-column h1{
     font-size: 4.5em;
-    white-space: nowrap;
     color:#fff
 
 }
 .title-row{
     background-color:  #343333;
-    padding: 10rem 0 4rem;
+
 }
 .image-wrapper img{
   width: 100%;
