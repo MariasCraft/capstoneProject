@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;1,400&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #343333;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 nav{
@@ -9,11 +17,11 @@ nav{
 }
 .navbar{
     padding: 0 6rem;
-    line-height: 10em;
+    line-height: 7em;
 }
 .nav-item a{
     color:#fff;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 .navbar ul{
     margin-left: auto;
@@ -22,10 +30,11 @@ nav{
 .navbar button{
     line-height: 1.3em;
     padding: .7rem 2rem;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 nav ul li a{
-    color:#fff !important
+    color:#fff !important;
+    
 }
 .logo{
     width: 100%;
@@ -48,6 +57,10 @@ nav ul li a{
 .fa-brands{
     color:#fff
 }
+#bookNow{
+    padding: 10px 25px;
+    white-space: nowrap;
+}
 
 .title-column h1{
     font-size: 4.5em;
@@ -56,7 +69,11 @@ nav ul li a{
 }
 .title-row{
     background-color:  #343333;
-
+    padding: 5% 0 5% 5%;
+    
+}
+.title-row h1{
+    font-size: 3.5em;
 }
 .image-wrapper img{
   width: 100%;
