@@ -91,19 +91,25 @@ nav ul li a{
 .social-icons{
     display: flex;
 }
-.image-with-text{
-    justify-content: center;
-}
-.image-with-text .col-lg-4{
-    padding: 0;
-}
-.image-with-text .col-lg-4 img{
-    object-fit: cover;
-    width: 100%;
-}
+
+
 .image-with-text .col-lg-5 p{
     font-size: 1.4em;
 }
 .image-with-text .col-lg-5 h2{
+    font-size: 4em;
+}
+
+/* ------------------------SPACES----------------------------------- */
+.card-body button a{
+    text-decoration: none;
+    color: #343333;
+}
+
+/* -------------------------AMENITIES------------------------------- */
+.amenities-text .col-lg-6 p{
+    font-size: 1.4em;
+}
+.amenities-text .col-lg-6 h2{
     font-size: 4em;
 }
