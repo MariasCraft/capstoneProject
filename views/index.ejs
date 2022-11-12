@@ -12,10 +12,15 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="css/home.css">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <title>Home</title>
 </head>
 
 <body>
+
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid navitems">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -58,95 +63,204 @@
         <!-- -------------------------HOME-------------------------------- -->
         <div class="container-fluid mb-5">
             <div class="row title-row">
-                <div class="col-8 title-column">
+                <div class="col-lg-8 col-sm-12 title-column d-flex">
                     <h1>Exceptional stay <br>
                         Extraordinary adventure.</h1>
                 </div>
             </div>
             <div class="row image">
-                <div class="col image-wrapper">
+                <div class="col-lg-12 image-wrapper">
                     <img src="images/hero-image.jpg" />
                 </div>
             </div>
         </div>
         <!-- -------------------------------ABOUT US---------------------------- -->
-        <div class="row image-with-text justify-content-center mb-5">
-            <div class="col-lg-6">
-                <img src="https://picsum.photos/600" alt="">
+        <section class="container-fluid">
+            <div class="row image-with-text justify-content-center mb-5">
+                <div class="col-lg-6 col-md-12">
+                    <img src="https://picsum.photos/600" alt="" style="width:100%">
+                </div>
+                <div class="col-lg-5 col-md-12 d-flex align-items-start about-text flex-column justify-content-center">
+                    <h2>Lorem Picsum</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure deserunt animi ullam doloribus,
+                        molestias ab et quisquam laborum quam sunt sequi. Expedita quisquam quo, inventore at officiis
+                        laudantium accusamus quod itaque eligendi in? Consequuntur est dolorem quibusdam iste ipsa dicta
+                        temporibus odio repudiandae accusantium ratione! Rem quaerat illum ad?</p>
+                    <button class="px-5 py-3 border-0">LEARN MORE</button>
+                </div>
             </div>
-            <div class="col-lg-5 d-flex align-items-start about-text flex-column justify-content-center">
-                <h2>Lorem Picsum</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure deserunt animi ullam doloribus,
-                    molestias ab et quisquam laborum quam sunt sequi. Expedita quisquam quo, inventore at officiis
-                    laudantium accusamus quod itaque eligendi in? Consequuntur est dolorem quibusdam iste ipsa dicta
-                    temporibus odio repudiandae accusantium ratione! Rem quaerat illum ad?</p>
-                <button class="px-5 py-3 border-0">LEARN MORE</button>
-            </div>
-        </div>
+        </section>
         <!-- -----------------------------SPACES----------------------------------- -->
         <div id="spaces">
             <div class="container-fluid">
                 <h2 class="text-center">Discover our spaces</h2>
                 <h3 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptates!</h3>
                 <div class="row justify-content-center mt-5">
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="card bg-transparent border-0" style="width: 22rem;">
-                            <img src="/images/pexels-adriaan-greyling-751266.jpg" class="card-img-top" alt="..." height="450">
-                            <div class="card-body text-center">
-                              
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <button class="px-5 py-3 border-0"><a href="#">EXPLORE SPACE</a></button>
+                    <% for (let property of featuredProperty) {%>
+                        <div class="col-lg-3 col-sm-10 d-flex justify-content-center">
+                            <div class="card bg-transparent border-0">
+                                <img src='<%= property.imageUrl%>' class="card-img-top" alt="..." height="450">
+                                <div class="card-body text-center">
+
+                                    <p class="card-text">
+                                    <h3>
+                                        <%=property.name %>
+                                    </h3>
+                                    <%=property.address %>
+                                        </p>
+                                        <button class="px-5 py-3 border-0"><a href="#">EXPLORE SPACE</a></button>
+                                </div>
                             </div>
-                          </div>
-                    </div>
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="card bg-transparent border-0" style="width: 22rem;">
-                            <img src="/images/pexels-adriaan-greyling-751266.jpg" class="card-img-top" alt="..." height="450">
-                            <div class="card-body text-center">
-                              
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <button class="px-5 py-3 border-0"><a href="#">EXPLORE SPACE</a></button>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-lg-4 d-flex justify-content-center">
-                        <div class="card card bg-transparent border-0" style="width: 22rem;">
-                            <img src="/images/pexels-adriaan-greyling-751266.jpg" class="card-img-top" alt="..." height="450">
-                            <div class="card-body text-center">
-                              
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <button class="px-5 py-3 border-0"><a href="#">EXPLORE SPACE</a></button>
-                            </div>
-                          </div>
-                    </div>
+                        </div>
+                        <%}%>
                 </div>
             </div>
-            <div class="text-center container-fluid" >
-                <p style="font-size: 5em; color: #4c4b4b; line-height: 2rem;" class="mb-0"><i class="fa-solid fa-quote-left"></i></p>
-                <p style="font-size: 2.5em; color: white; line-height: 2.5rem;">Taking time off is the best you can do for your <br> peace of mind</p>
-                <div>
-                  <img style="width: 100%;" src="/images/buildings-gf47f341de_1920.jpg" alt="">
-                </div>
-            </div>    
         </div>
+
 
         <!-- ---------------------------------AMENETIES------------------------------------ -->
-        <div id="amenities">
+        <section id="amenities" class="container-fluid">
             <div class="row justify-content-center mb-5 mt-5 amenities-text">
-                <div  class="col-lg-6 d-flex align-items-center about-text flex-column justify-content-center px-5">
+                <div class="col-lg-6 d-flex align-items-center about-text flex-column justify-content-center px-5">
                     <h2>Amenities</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure deserunt animi ullam doloribus,
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure deserunt
+                        animi ullam doloribus,
                         molestias ab et quisquam laborum quam sunt sequi.</p>
-                    <button class="px-5 py-3 border-0" >LEARN MORE</button>
+                    <button class="px-5 py-3 border-0">LEARN MORE</button>
                 </div>
                 <div class="col-lg-5">
-                    <img src="https://picsum.photos/600" alt="">
+                    <img src="https://picsum.photos/600" alt="" style="width:100%">
                 </div>
-                
+            </div>
+        </section>
+        <section class="container-fluid">
+            <div class="row justify-content-center reviews">
+                <div class="col-lg-6">
+                    <div class="reviews-slide w-70"
+                        data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false, "autoplay":true,"autoplaySpeed": 2000}'>
+                        <div>
+                            <h3>“If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 1</p>
+                        </div>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 2</p>
+                        </div>
+                        <div>
+                            <h3>“If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 3</p>
+                        </div>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 4</p>
+                        </div>
+                        <div>
+                            <h3>“If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 5</p>
+                        </div>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 6</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="reviews-slide2 w-70"
+                        data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false,"autoplay":true,"autoplaySpeed": 2000}'>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 1</p>
+                        </div>
+                        <div>
+                            <h3>"If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 2</p>
+                        </div>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 3</p>
+                        </div>
+                        <div>
+                            <h3>"If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 4</p>
+                        </div>
+                        <div>
+                            <h3>"I can’t imagine a nicer place to stay
+                                for the price."</h3>
+                            <p>--Guest 5</p>
+                        </div>
+                        <div>
+                            <h3>"If I could live there, I would. And
+                                believe me, I’ve asked."</h3>
+                            <p>--Guest 6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="plan-with-us" class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Plan a stay with us today.</h2>
+                    <a href="#">BOOK A SPACE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-fluid">
+        <nav class="navbar navbar-expand-lg text-center">
+            <div class="container-fluid navitems justify-content-center">
+                <h2><a class=" navbar-brand mx-auto" href="#">Name of the site</a></h2>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="logo">
+                        <a class="navbar-brand" href="#">
+                            <h2>Name of the site</h2>
+                        </a>
+                    </div>
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex navlinks">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">SPACES</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled">AMENITIES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">CONTACT</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+            <div class="book-now">
+                <button id="bookNow">BOOK NOW</button>
+            </div>
+
+        </nav>
+        <div class="footer-social d-flex">
+            <div class="social-icons me-lg-auto">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="ms-lg-auto ms-lg-auto ">
+                <p> &#169; 2022 nameofsite.com</p>
             </div>
         </div>
-        
-    </main>
+    </footer>
 
 
 
@@ -162,11 +276,19 @@
 
 
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.reviews-slide').slick();
+            $('.reviews-slide2').slick();
+        })
+    </script>
 </body>
 
 </html>

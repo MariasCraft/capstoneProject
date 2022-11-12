@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,800;0,900;1,200;1,600;1,700;1,900&display=swap');
 
 *{
     margin: 0;
@@ -10,18 +10,21 @@ body{
     color: white;
     font-family: 'Nunito Sans', sans-serif;
 }
+h1,h2{
+    font-weight: 700;
+}
 
 nav{
     background-color: #4c4b4b;
   
 }
-.navbar{
+.navbar,.footer-social{
     padding: 0 6rem;
-    line-height: 7em;
 }
+
 .nav-item a{
     color:#fff;
-    font-size: 1em;
+    font-size: .7em;
 }
 .navbar ul{
     margin-left: auto;
@@ -41,32 +44,29 @@ nav ul li a{
  
 }
 .navbar-brand{
-    font-size: 2em;
-    font-size: 1.3em;
-    color:#fff
+    font-size: 1em;
+    color:#fff;
+    line-height: 3em;
+    font-weight: 700;
 }
 .navitems{
-    gap: 2em;
+    gap: 1rem;
 }
 .navlinks{
-    gap: 2em;
+    gap: 1rem;
 }
 .fa-facebook{
-    margin-right: 1em;
+    margin: 0 2rem;
 }
 .fa-brands{
-    color:#fff
+    color:#fff;
+    margin-right: 2rem
 }
 #bookNow{
     padding: 10px 25px;
     white-space: nowrap;
 }
 
-.title-column h1{
-    font-size: 4.5em;
-    color:#fff
-
-}
 .title-row{
     background-color:  #343333;
     padding: 5% 0 5% 5%;
@@ -74,6 +74,7 @@ nav ul li a{
 }
 .title-row h1{
     font-size: 3.5em;
+    color:#fff
 }
 .image-wrapper img{
   width: 100%;
@@ -105,11 +106,107 @@ nav ul li a{
     text-decoration: none;
     color: #343333;
 }
+#spaces .row{
+    gap:6%
+}
+#spaces h2{
+    font-size: 3.5em;
+}
 
 /* -------------------------AMENITIES------------------------------- */
 .amenities-text .col-lg-6 p{
     font-size: 1.4em;
 }
 .amenities-text .col-lg-6 h2{
-    font-size: 4em;
+    font-size: 3.5em;
+}
+
+/* -------------------------PLAN WITH US------------------------------- */
+#plan-with-us{
+    text-align: center;
+    background-color: #d9d9d9 ;
+    color:#4c4b4b;
+}
+
+#plan-with-us .row{
+    padding: 5rem 0 4rem;
+}
+#plan-with-us .row h2{
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+#plan-with-us .row a{
+    background-color: #4c4b4b;
+    padding: 1rem 2rem;
+    line-height: 3em;
+    text-decoration: none;
+    color: #fff;
+ 
+}
+
+/* -------------------------SLICK SLIDER------------------------------- */
+
+.reviews .reviews-slide h3, .reviews .reviews-slide2 h3{
+    width: 75%;
+    FONT-SIZE: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* -------------------------FOOTER------------------------------- */
+footer .navbar-brand  h2{
+    display: none !important;
+}
+footer .social-icons{
+    padding: 12px;
+} 
+
+footer{
+    padding: 0 !important;
+    background-color: #4c4b4b;
+}
+
+
+
+/* Media Queries */
+
+@media screen and (max-width:991px){
+    footer .navbar-brand h2{
+        display: block;
+    }
+    .book-now{
+        width: 100% !important;
+    }
+    .footer-social{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1{
+        font-size: 2rem;
+    }
+    .reviews-slide, .reviews-slide2{
+        text-align: center;
+   
+    }
+    .reviews .reviews-slide h3, .reviews .reviews-slide2 h3{
+        width: 100%;
+    }
+    .image-with-text .about-text{
+        align-items: center !important;
+    }
+    #amenities .amenities-text .about-text{
+        margin: 2rem 0;
+    }
+    nav{
+        justify-content: center !important;
+    }
+     nav .navitems{
+        justify-content: center !important;
+    }
+}
+@media screen and (max-width:415px) {
+    .title-row .title-column h1{
+        font-size: 2.5em;
+    }
 }
