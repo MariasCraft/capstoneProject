@@ -34,20 +34,19 @@ app.listen(process.env.port || 3000, () => {
     })
     console.log("we are online: http://localhost:3000")
 })
-app.post('/add', async (req, res) => {
-    const newUser = {
-        username: req.body.user,
-        password: req.body.pass,
-        name: req.body.name,
-    }
-    await User.create(newUser)
-    res.send('sent')
-})
+// app.post('/add', async (req, res) => {
+//     const newUser = {
+//         username: req.body.user,
+//         password: req.body.pass,
+//         name: req.body.name,
+//     }
+//     await User.create(newUser)
+//     res.send('sent')
+// })
 
-app.get('/add', (req, res) => {
-    res.render('add')
-})
-
+// app.get('/add', (req, res) => {
+//     res.render('add')
+// })
 
 app.get("/", async (req, res) => {
     try {
@@ -59,10 +58,15 @@ app.get("/", async (req, res) => {
 
 })
 
-app.get('/about', (req, res) => {
-    res.render('about')
-})
+app.get('/about', async (req, res) => {
+    try {
+        const aboutProperty = await Space.find().sort({ rating: -1 }).limit(6)
+        res.render('about', { aboutProperty })
+    } catch (error) {
+        console.log(error.message)
+    }
 
+})
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set("view engine", "ejs")
