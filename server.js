@@ -59,6 +59,10 @@ app.get("/", async (req, res) => {
 
 })
 
+app.get('/about', (req, res) => {
+    res.render('about')
+})
+
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.set("view engine", "ejs")

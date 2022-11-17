@@ -101,7 +101,7 @@ nav ul li a{
     font-size: 4em;
 }
 
-/* ------------------------SPACES----------------------------------- */
+/* ------------------------ABOUT----------------------------------- */
 .card-body button a{
     text-decoration: none;
     color: #343333;
@@ -111,6 +111,33 @@ nav ul li a{
 }
 #spaces h2{
     font-size: 3.5em;
+}
+.mission{
+    height: 75vh;
+}
+.mission-left{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    
+}
+.mission-left img{
+    width: 80%;
+    height: 100%;
+} 
+.mission-right{
+    position: relative;
+    
+}
+.mission-right img{
+    position: absolute;
+    width: 80%;
+    left: -6%;
+    top: 10%;
+    height: 100%;
+}
+.discoveries{
+    margin-top: 100px;
 }
 
 /* -------------------------AMENITIES------------------------------- */
