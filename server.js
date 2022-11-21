@@ -68,6 +68,11 @@ app.get('/about', async (req, res) => {
 
 })
 
+app.get('/amenities', (req,res) => {
+    res.render("amenities")
+})
+
+
 app.use(express.static(path.join(__dirname, 'public')))
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
