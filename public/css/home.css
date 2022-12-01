@@ -291,6 +291,11 @@ hr{
 /* Media Queries */
 
 @media screen and (max-width:991px){
+    .navbar{
+        flex-wrap: inherit;
+        padding: 0 3rem;
+    }
+
     footer .navbar-brand h2{
         display: block;
     }
@@ -330,4 +335,3 @@ hr{
         font-size: 2.5em;
     }
 }
-
