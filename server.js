@@ -34,19 +34,7 @@ app.listen(process.env.port || 3000, () => {
     })
     console.log("we are online: http://localhost:3000")
 })
-// app.post('/add', async (req, res) => {
-//     const newUser = {
-//         username: req.body.user,
-//         password: req.body.pass,
-//         name: req.body.name,
-//     }
-//     await User.create(newUser)
-//     res.send('sent')
-// })
 
-// app.get('/add', (req, res) => {
-//     res.render('add')
-// })
 
 app.get("/", async (req, res) => {
     try {
@@ -68,8 +56,11 @@ app.get('/about', async (req, res) => {
 
 })
 
-app.get('/amenities', (req,res) => {
+app.get('/amenities', (req, res) => {
     res.render("amenities")
+})
+app.get('/admin', (req, res) => {
+    res.render('admin/add-room')
 })
 
 
