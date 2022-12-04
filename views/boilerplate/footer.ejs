@@ -72,6 +72,16 @@
         $('.reviews-slide').slick();
         $('.reviews-slide2').slick();
 
+        $('#isOccupied').change(function () {
+            if ($('#isOccupied').prop('checked') === true) {
+                $('#isOccupied').val(true)
+            }
+            else if ($('#isOccupied').prop('checked') === false) {
+                $('#isOccupied').val(false)
+
+            }
+            console.log($('#isOccupied').val())
+        })
     })
 </script>
 </body>

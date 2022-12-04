@@ -11,6 +11,9 @@ import MongoStore from "connect-mongo"
 import User from './models/Users.js'
 import Space from './models/Spaces.js'
 import Review from './models/Reviews.js'
+import { storage } from './utils/cloudinary.js'
+import multer from 'multer'
+const upload = multer({ storage })
 
 dotenv.config()     //to use the process dotenv variable
 
@@ -59,9 +62,46 @@ app.get('/about', async (req, res) => {
 app.get('/amenities', (req, res) => {
     res.render("amenities")
 })
-app.get('/admin', (req, res) => {
+app.get('/admin', async (req, res) => {
+    try {
+        let spaces = await Space.find()
+        res.render('admin/home', { spaces })
+    } catch (error) {
+        console.log(error.message)
+    }
+})
+app.get('/admin/add-room', (req, res) => {
     res.render('admin/add-room')
 })
+app.post('/admin/add-room', upload.array('image'), async (req, res) => {
+    try {
+        let checkData = await Space.findOne({ name: req.body.name });
+        if (checkData) {
+            res.redirect('/admin/add-room')
+        }
+        else {
+            req.body.image = req.files.map(f => ({
+                url: f.path,
+                filename: f.filename
+            }))
+
+            await new Space(req.body).save();
+            res.redirect('/admin')
+        }
+    } catch (error) {
+        console.log(error.message)
+    }
+
+})
+app.get('/admin/edit/:id', async (req, res) => {
+    try {
+        let editSpace = await Space.findById(req.params.id)
+        res.render('admin/edit', { editSpace })
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
 
 
 app.use(express.static(path.join(__dirname, 'public')))
