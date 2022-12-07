@@ -6,6 +6,8 @@ const ImageSchema = new Schema({
     filename: String
 });
 
+const randomRating = Math.floor(5).toFixed(2)
+
 const SpaceSchema = new Schema({
     name: String,
     roomNumber: Number,
@@ -15,7 +17,7 @@ const SpaceSchema = new Schema({
     image: [ImageSchema],
     rating: {
         type: Number,
-        default: 0
+        default: randomRating
     }
 
 })

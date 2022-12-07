@@ -42,7 +42,10 @@ app.listen(process.env.port || 3000, () => {
 app.get("/", async (req, res) => {
     try {
         const featuredProperty = await Space.find().sort({ rating: -1 }).limit(3)
-        res.render("index", { featuredProperty });
+        let reviews = await Review.find().limit(12)
+        console.log(featuredProperty)
+        res.locals.title = 'Home'
+        res.render("index", { featuredProperty: featuredProperty, reviews: reviews });
     } catch (error) {
         console.log(error.message)
     }
@@ -51,8 +54,11 @@ app.get("/", async (req, res) => {
 
 app.get('/about', async (req, res) => {
     try {
+
         const aboutProperty = await Space.find().sort({ rating: -1 }).limit(6)
-        res.render('about', { aboutProperty })
+        let reviews = await Review.find().limit(12)
+        res.locals.title = 'About Us'
+        res.render('about', { aboutProperty: aboutProperty, reviews: reviews })
     } catch (error) {
         console.log(error.message)
     }
@@ -60,10 +66,12 @@ app.get('/about', async (req, res) => {
 })
 
 app.get('/amenities', (req, res) => {
+    res.locals.title = 'Amenities'
     res.render("amenities")
 })
 app.get('/admin', async (req, res) => {
     try {
+        res.locals.title = 'Admin'
         let spaces = await Space.find()
         res.render('admin/home', { spaces })
     } catch (error) {
@@ -71,10 +79,12 @@ app.get('/admin', async (req, res) => {
     }
 })
 app.get('/admin/add-room', (req, res) => {
+    res.locals.title = 'Add Room'
     res.render('admin/add-room')
 })
 app.post('/admin/add-room', upload.array('image'), async (req, res) => {
     try {
+        res.locals.title = 'Add room'
         let checkData = await Space.findOne({ name: req.body.name });
         if (checkData) {
             res.redirect('/admin/add-room')
@@ -95,6 +105,7 @@ app.post('/admin/add-room', upload.array('image'), async (req, res) => {
 })
 app.get('/admin/edit/:id', async (req, res) => {
     try {
+        res.locals.title = 'Edit Room'
         let editSpace = await Space.findById(req.params.id)
         res.render('admin/edit', { editSpace })
     } catch (error) {

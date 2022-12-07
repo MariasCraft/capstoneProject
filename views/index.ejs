@@ -22,7 +22,8 @@
             </div>
             <div class="col-lg-5 col-md-12 d-flex align-items-start about-text flex-column justify-content-center">
                 <h2>Rent Space With Us</h2>
-                <p>This spacious condo features state-of-the-art amenities, including a view deck, 24-hour security, and garage parking. It is conveniently located near shopping and dining in Fairwinds.</p>
+                <p>This spacious condo features state-of-the-art amenities, including a view deck, 24-hour security, and
+                    garage parking. It is conveniently located near shopping and dining in Fairwinds.</p>
                 <button class="px-5 py-3 border-0">LEARN MORE</button>
             </div>
         </div>
@@ -51,7 +52,7 @@
                 <% for (let property of featuredProperty) {%>
                     <div class="col-lg-3 col-sm-10 d-flex justify-content-center">
                         <div class="card bg-transparent border-0">
-                            <img src='<%= property.imageUrl%>' class="card-img-top" alt="..." height="450">
+                            <img src='<%=property.image[0].url%>' class="card-img-top" alt="..." height="450">
                             <div class="card-body text-center">
 
                                 <p class="card-text">
@@ -90,71 +91,29 @@
             <div class="col-lg-6">
                 <div class="reviews-slide w-70"
                     data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false, "autoplay":true,"autoplaySpeed": 2000}'>
-                    <div>
-                        <h3>“If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 1</p>
-                    </div>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 2</p>
-                    </div>
-                    <div>
-                        <h3>“If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 3</p>
-                    </div>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 4</p>
-                    </div>
-                    <div>
-                        <h3>“If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 5</p>
-                    </div>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 6</p>
-                    </div>
+                    <%for (let i=0;i<6;i++) {%>
+                        <div>
+                            <h3>
+                                <%=reviews[i].content%>
+                            </h3>
+                            <p>--Guest <%=reviews[i].review%>
+                            </p>
+                        </div>
+                        <%}%>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="reviews-slide2 w-70"
                     data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false,"autoplay":true,"autoplaySpeed": 2000}'>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 1</p>
-                    </div>
-                    <div>
-                        <h3>"If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 2</p>
-                    </div>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 3</p>
-                    </div>
-                    <div>
-                        <h3>"If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 4</p>
-                    </div>
-                    <div>
-                        <h3>"I can’t imagine a nicer place to stay
-                            for the price."</h3>
-                        <p>--Guest 5</p>
-                    </div>
-                    <div>
-                        <h3>"If I could live there, I would. And
-                            believe me, I’ve asked."</h3>
-                        <p>--Guest 6</p>
-                    </div>
+                    <%for (let i=6;i<11;i++) {%>
+                        <div>
+                            <h3>
+                                <%=reviews[i].content%>
+                            </h3>
+                            <p>--Guest <%=reviews[i].review%>
+                            </p>
+                        </div>
+                        <%}%>
                 </div>
             </div>
         </div>

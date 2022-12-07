@@ -5,11 +5,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    overflow-x: hidden;
+}
 body{
+    overflow-x: hidden;
     background: #343333;
     color: white;
     font-family: 'Nunito Sans', sans-serif;
 }
+
 h1,h2{
     font-weight: 700;
 }
@@ -56,7 +61,7 @@ nav ul li a{
 /* *******logo****** */
 
 .navbar-brand img{
-    height: 250px;
+    width: 150px;
 }
 .navitems{
     gap: 1rem;
@@ -149,6 +154,9 @@ nav ul li a{
 .about-discoveries{
     margin-top: 100px;
 }
+.about-discoveries .row:nth-child(3){
+    margin-top: 1rem;
+}
 
 
 /* -------------------------TAKING TIME OFF------------------------------- */
@@ -222,9 +230,9 @@ nav ul li a{
     margin-bottom: 2rem;
 }
 .hospitality-slides{
-    background:#4c4b4b;
+    background: #fff;
+    color: #4c4b4b;
 }
-
 /* -------------------------FOOTER------------------------------- */
 footer .navbar-brand  h2{
     display: none !important;
@@ -322,7 +330,7 @@ hr{
 /* Media Queries */
 
 @media screen and (max-width:991px){
-    .navbar{
+    header .navbar{
         flex-wrap: inherit;
         padding: 0 3rem;
     }
