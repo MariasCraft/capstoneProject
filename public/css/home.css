@@ -53,6 +53,11 @@ nav ul li a{
     line-height: 3em;
     font-weight: 700;
 }
+/* *******logo****** */
+
+.navbar-brand img{
+    height: 250px;
+}
 .navitems{
     gap: 1rem;
 }
