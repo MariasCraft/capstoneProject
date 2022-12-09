@@ -59,38 +59,14 @@
                 </div>
             </div>
             <div>
-                <button id="bookNow" data-bs-toggle="modal" data-bs-target="#exampleModal">BOOK NOW</button>
+                <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"
+                    async></script>
+                <button id="bookNow"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/online_booking-kodego'});return false;">BOOK
+                    NOW</button>
             </div>
         </nav>
     </header>
     <main>
-        <!---------------------------------MODAL------------------------------------>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div>
-                        <h3 class="modal-title" id="exampleModalLabel" align="center"><a class="navbar-brand"
-                                href="#"><img src="/images/walkcondo2logo-cropped.svg" alt=""></a></h3>
-                    </div>
-                    <div class="modal-body py-5">
-                        <h5>LOGIN</h5>
-                        <form>
-                            <input class="form-control mb-2 w-50" type="text" name="username" id="username" />
-                            <input class="form-control mb-2 w-50" type="password" name="password" id="password" />
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Login</button>
-                    </div>
-                    </form>
-                    <em><a href="#">Forgot Password?</a></em>
-                    <em>
-                        Don't have an account yet? Register <a href="#">HERE.</a>
-                    </em>
-                </div>
-            </div>
-        </div>
